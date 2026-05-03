@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: eventpass-backend
+    env: python
+    region: oregon
+    plan: free
+    buildCommand: pip install -r requirements.txt && python manage.py collectstatic --noinput && python manage.py migrate --run-syncdb
+    startCommand: gunicorn entry_system.wsgi:application --bind 0.0.0.0:$PORT
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: ".onrender.com"
+      - key: MONGODB_URI
+        sync: false          # set manually in Render dashboard
+      - key: MONGODB_DB_NAME
+        value: ticket_db
+      - key: CORS_ALLOWED_ORIGINS
+        sync: false          # set to your Vercel URL in Render dashboard
+      - key: PYTHON_VERSION
+        value: "3.11.0"

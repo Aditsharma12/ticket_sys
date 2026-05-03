@@ -1,0 +1,211 @@
+/* Enhanced Modern Dark Theme - Add this to your templates */
+
+/* CSS Variables */
+:root {
+    --bg-main: #111827;
+    --bg-section: #1f2937;
+    --bg-card: #1e293b;
+    --accent: #8b5cf6;
+    --text-primary: #f9fafb;
+    --text-secondary: #9ca3af;
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Animated Background Canvas */
+#animated-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+/* Enhanced Body Styling */
+body {
+    background: var(--bg-main) !important;
+    color: var(--text-primary) !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Fade-in Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Enhanced Cards */
+.card,
+.form-section,
+.preview-section,
+.stat-card,
+.action-card,
+.ticket-card {
+    background: var(--bg-card) !important;
+    border: 1px solid rgba(139, 92, 246, 0.2) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+    transition: var(--transition) !important;
+}
+
+.card:hover,
+.stat-card:hover,
+.action-card:hover,
+.ticket-card:hover {
+    transform: translateY(-6px) !important;
+    box-shadow: 0 12px 32px rgba(139, 92, 246, 0.3) !important;
+    border-color: rgba(139, 92, 246, 0.4) !important;
+}
+
+/* Enhanced Buttons */
+button,
+.btn,
+.download-btn,
+.edit-design-btn {
+    background: linear-gradient(135deg, #8b5cf6, #7c3aed) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 12px !important;
+    padding: 12px 24px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: var(--transition) !important;
+    box-shadow: 0 4px 16px rgba(139, 92, 246, 0.3) !important;
+}
+
+button:hover,
+.btn:hover,
+.download-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 24px rgba(139, 92, 246, 0.5) !important;
+}
+
+/* Enhanced Inputs */
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="email"],
+textarea,
+select {
+    background: rgba(31, 41, 55, 0.6) !important;
+    border: 1px solid rgba(139, 92, 246, 0.2) !important;
+    border-radius: 12px !important;
+    color: var(--text-primary) !important;
+    padding: 12px 16px !important;
+    transition: var(--transition) !important;
+    outline: none !important;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.15) !important;
+    background: rgba(31, 41, 55, 0.8) !important;
+}
+
+/* Enhanced Navbar */
+.navbar,
+nav {
+    background: rgba(31, 41, 55, 0.8) !important;
+    backdrop-filter: blur(12px) !important;
+    border-bottom: 1px solid rgba(139, 92, 246, 0.1) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Enhanced Headings */
+h1, h2, h3, h4 {
+    color: var(--text-primary) !important;
+    font-weight: 700 !important;
+}
+
+h1 {
+    font-size: 2.5rem !important;
+    background: linear-gradient(135deg, #f9fafb, #8b5cf6) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+/* Enhanced Shadows */
+.container,
+.welcome-section,
+.controls {
+    background: var(--bg-section) !important;
+    border-radius: 12px !important;
+    padding: 24px !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Smooth Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #7c3aed;
+}
+
+/* Alert Enhancements */
+.alert {
+    border-radius: 12px !important;
+    border: none !important;
+    padding: 16px 20px !important;
+}
+
+.alert-success {
+    background: rgba(34, 197, 94, 0.15) !important;
+    color: #86efac !important;
+    border: 1px solid rgba(34, 197, 94, 0.3) !important;
+}
+
+.alert-error {
+    background: rgba(239, 68, 68, 0.15) !important;
+    color: #fca5a5 !important;
+    border: 1px solid rgba(239, 68, 68, 0.3) !important;
+}
+
+/* Link Styling */
+a {
+    color: var(--accent) !important;
+    transition: var(--transition) !important;
+}
+
+a:hover {
+    color: #a78bfa !important;
+}
+
+/* Responsive Enhancements */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem !important;
+    }
+    
+    .card,
+    .stat-card,
+    .action-card {
+        margin-bottom: 16px !important;
+    }
+}
